@@ -28,7 +28,6 @@ export class FamilyComponent implements OnInit {
         groupedData[key].push(member);
       });
 
-      // Csoportosítás titulus alapján
       const familyGroups: any[] = [];
       Object.keys(groupedData).forEach((key) => {
         const titleGroups: { [key: string]: any[] } = {};
@@ -47,7 +46,7 @@ export class FamilyComponent implements OnInit {
         });
 
         const sortedMembers = sortedTitles.map((title) => titleGroups[title]);
-        familyGroups.push({ title: key, members: sortedMembers.flat() });  // flat() hozzáadva
+        familyGroups.push({ title: key, members: sortedMembers.flat() });
       });
 
       this.familyMembers = familyGroups;
